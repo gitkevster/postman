@@ -10,4 +10,4 @@ script:
   - bash ./scripts/test.sh
 
 after_success:
-  - echo "All done!"
+  - echo "All done!!"
