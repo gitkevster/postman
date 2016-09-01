@@ -2,6 +2,8 @@ language: java
 
 jdk:
   - oraclejdk8
+services:
+  - docker
 
 before_install:
  - chmod a+x ./scripts/test.sh
@@ -10,4 +12,4 @@ script:
   - bash ./scripts/test.sh
 
 after_success:
-  - echo "All done!!"
+  - echo "All done!"
