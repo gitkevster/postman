@@ -5,9 +5,6 @@ jdk:
 services:
   - docker
 
-before_install:
- - chmod a+x ./scripts/test.sh
-
 script:
   - bash ./scripts/test.sh
 
