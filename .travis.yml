@@ -14,7 +14,7 @@ before_install:
 script:
   - docker run -v $PWD/test/data:/etc/newman -t postman/newman_alpine33:${NEWMAN_VERSION} \
         -c HTTPBinNewmanTest.json.postman_collection \
-        -e HTTPBinNewmanTestEnv.json.postman_environment \
+        -e HTTPBinNewmanTestEnv.json.postman_environment
 
 after_success:
   - echo "All done!"
