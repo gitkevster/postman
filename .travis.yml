@@ -17,4 +17,4 @@ script:
         -e HTTPBinNewmanTestEnv.json.postman_environment
 
 after_success:
-  - echo "All done!"
+  - echo "All Done!"
