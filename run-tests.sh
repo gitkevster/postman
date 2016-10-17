@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ev
 
 # Send a test started message to the Slack regression channel
 curl -X POST --data-urlencode "payload={\"username\": \"test-automation-bot\", \"text\": \"Test #$TRAVIS_JOB_NUMBER *STARTED* for *$TESTFOLDER*\"}" $SLACK_URL

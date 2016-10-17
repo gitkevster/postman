@@ -4,11 +4,10 @@ services:
 env:
 - TESTFOLDER=api/srv-accounts
 - TESTFOLDER=api/srv-transactions
+- TESTFOLDER=api/srv-yodlee-adapter
 
 before_install:
-- chmod +x before-tests.sh
-- chmod +x run-tests.sh
-- ./before-tests.sh
+- chmod +x *.sh
 
 script:
 - ./run-tests.sh
