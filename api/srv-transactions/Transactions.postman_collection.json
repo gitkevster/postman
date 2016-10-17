@@ -71,7 +71,7 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "var data = JSON.parse(responseBody);\ntests[\"Response contains params\"] = data.args.lol === \"true\";",
+			"tests": "var data = JSON.parse(responseBody);\ntests[\"Response contains params\"] = data.args.lol === \"false\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1438250908857,
