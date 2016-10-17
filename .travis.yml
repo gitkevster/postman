@@ -6,8 +6,9 @@ env:
 - TESTFOLDER=api/srv-transactions
 
 before_install:
+- chmod +x before-tests.sh
 - chmod +x run-tests.sh
-- curl -X POST --data-urlencode "payload={\"username\": \"test-automation-bot\", \"text\": \"Starting Regression Test #$TRAVIS_BUILD_NUMBER *STARTED* for tests in repository - *$TRAVIS_REPO_SLUG*\"}" $SLACK_URL
+- ./before-tests.sh
 
 script:
 - ./run-tests.sh

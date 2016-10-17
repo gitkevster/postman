@@ -1,0 +1,1 @@
+curl -X POST --data-urlencode "payload={\"username\": \"test-automation-bot\", \"text\": \"Starting Regression Test #$TRAVIS_BUILD_NUMBER *STARTED* for tests in repository - *$TRAVIS_REPO_SLUG*\"}" $SLACK_URL
