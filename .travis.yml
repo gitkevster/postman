@@ -1,9 +1,8 @@
 services:
 - docker
 script:
-- curl -X POST --data-urlencode 'payload={"channel": "#regression", "username": "automation-bot", "text": "Automation tests *STARTED* for"}' ${SLACK_URL} > /dev/null
+- curl -X POST --data-urlencode 'payload={"channel": "#regression", "username": "automation-bot", "text": "Automation tests *STARTED* for"}' ${SLACK_URL}
 - docker run -v $PWD/test/data:/etc/newman -t postman/newman_alpine33
   -c HTTPBinNewmanTest.json.postman_collection -e HTTPBinNewmanTestEnv.json.postman_environment
-- curl -X POST --data-urlencode 'payload={"channel": "#regression", "username": "automation-bot", "text": "Automation tests *FINISHED* for"}' ${SLACK_URL} > /dev/null
-after_success:
-- echo "All Done!"
+- curl -X POST --data-urlencode 'payload={"channel": "#regression", "username": "automation-bot", "text": "Automation tests *FINISHED* for"}' ${SLACK_URL}
+
