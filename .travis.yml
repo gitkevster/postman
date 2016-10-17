@@ -1,6 +1,12 @@
 services:
 - docker
+
+env:
+- TESTFOLDER=api/srv-accounts
+- TESTFOLDER=api/srv-transactions
+
 before_install:
 - chmod +x run-tests.sh
+
 script:
 - ./run-tests.sh
