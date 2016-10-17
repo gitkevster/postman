@@ -1,7 +1,7 @@
 services:
 - docker
 script:
-- 'curl -X POST --data-urlencode "payload={\"channel\": \"#regression\", \"username\": \"automation-bot\", \"text\": \"Automation test #$TRAVIS_BUILD_NUMBER *STARTED* for repo: `$TRAVIS_REPO_SLUG`\"}" $SLACK_URL'
+- 'curl -X POST --data-urlencode "payload={\"channel\": \"#regression\", \"username\": \"automation-bot\", \"text\": \"Automation test #$TRAVIS_BUILD_NUMBER *STARTED* for repo: *$TRAVIS_REPO_SLUG*\"}" $SLACK_URL'
 - docker run -v $PWD/test/data:/etc/newman -t postman/newman_alpine33
   -c HTTPBinNewmanTest.json.postman_collection -e HTTPBinNewmanTestEnv.json.postman_environment
-- 'curl -X POST --data-urlencode "payload={\"channel\": \"#regression\", \"username\": \"automation-bot\", \"text\": \"Automation test #$TRAVIS_BUILD_NUMBER *FINISHED* for repo: `${TRAVIS_REPO_SLUG}`\"}" $SLACK_URL'
+- 'curl -X POST --data-urlencode "payload={\"channel\": \"#regression\", \"username\": \"automation-bot\", \"text\": \"Automation test #$TRAVIS_BUILD_NUMBER *FINISHED* for repo: *$TRAVIS_REPO_SLUG*\"}" $SLACK_URL'
